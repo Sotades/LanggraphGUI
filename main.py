@@ -6,6 +6,9 @@ import PySide6.QtAsyncio as QtAsyncio
 import asyncio
 import sys
 
+from sotades.langgraph.langgraph_thread import LangGraphThread
+
+
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -16,7 +19,11 @@ class MainWindow(QMainWindow):
         self.setCentralWidget(button)
 
     def start_langchain_app(self):
-        print("Starting Langchain Code")
+        print("Starting Langchain Code Thread")
+        # Create thread and start it.
+        loop = asyncio.get_running_loop()
+        self.langgraph_thread = LangGraphThread(loop=loop)
+        self.langgraph_thread.start()
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
