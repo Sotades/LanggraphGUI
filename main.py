@@ -1,4 +1,9 @@
-from PyQt6.QtWidgets import QApplication, QMainWindow, QPushButton
+from PySide6.QtWidgets import QApplication, QMainWindow, QPushButton
+from PySide6.QtCore import Qt
+
+import PySide6.QtAsyncio as QtAsyncio
+
+import asyncio
 import sys
 
 class MainWindow(QMainWindow):
@@ -11,9 +16,11 @@ class MainWindow(QMainWindow):
         self.setCentralWidget(button)
 
     def start_langchain_app(self):
-        print("Starting Langchain Demo")
+        print("Starting Langchain Code")
 
-app = QApplication(sys.argv)
-window = MainWindow()
-window.show()
-app.exec()
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+    main_window = MainWindow()
+    main_window.show()
+
+    QtAsyncio.run(handle_sigint=True)
