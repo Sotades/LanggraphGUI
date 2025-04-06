@@ -25,6 +25,13 @@ class MainWindow(QMainWindow):
         self.langgraph_thread = LangGraphThread(loop=loop)
         self.langgraph_thread.start()
 
+        # Have to connect the signal to the slot here, because earlier langgraph_thread
+        # instance does not exist.
+        self.langgraph_thread.langgraph_signal.connect(self.process_langgraph_signal)
+
+    def process_langgraph_signal(self):
+        print("Processing Langgraph signal")
+
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     main_window = MainWindow()
