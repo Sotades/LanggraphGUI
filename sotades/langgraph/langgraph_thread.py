@@ -1,11 +1,15 @@
 import asyncio
 
-from PySide6 import QtAsyncio
+from PySide6.QtCore import Signal
 from PySide6.QtAsyncio import QAsyncioEventLoop
 from PySide6.QtCore import QThread
 
 
 class LangGraphThread(QThread):
+
+    # Define a custom signal from within this class. It should be available to all other
+    # classes that inherit from QObject.
+    langgraph_signal = Signal(str)
 
     def __init__(self, loop: QAsyncioEventLoop):
         super().__init__()
@@ -16,5 +20,7 @@ class LangGraphThread(QThread):
         self.loop = loop
 
     def run(self):
-
+        # Emit signal from langgraph thread. Can we process it in the main thread?
+        self.langgraph_signal.emit("Message from langgraph thread")
+        print("Emitted signal from langgraph thread")
         print("Thread complete")
