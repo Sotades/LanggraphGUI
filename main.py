@@ -14,13 +14,13 @@ class MainWindow(QMainWindow):
         super().__init__()
         self.setWindowTitle("Langgraph HITL Demo")
         button = QPushButton("Start Langchain")
-        button.clicked.connect(self.start_langchain_app)
+        button.clicked.connect(self.start_langgraph_app)
         # Set the central widget of the Window.
         self.setCentralWidget(button)
 
         self.langgraph_app_status = 'Not started'
 
-    def start_langchain_app(self):
+    def start_langgraph_app(self):
         if self.langgraph_app_status == 'Started':
             print('Already started')
         else:
