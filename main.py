@@ -1,5 +1,5 @@
 from PySide6.QtWidgets import QApplication, QMainWindow, QPushButton
-from PySide6.QtCore import Qt
+from PySide6.QtCore import Qt, QTimer
 
 import PySide6.QtAsyncio as QtAsyncio
 
@@ -31,6 +31,9 @@ class MainWindow(QMainWindow):
 
     def process_langgraph_signal(self):
         print("Processing Langgraph signal")
+
+        # Single shot timer fires after 10 seconds to simulate the return of a future.
+        QTimer.singleShot(5000, self.langgraph_thread.future.set_result("Langgraph signal processed"))
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
