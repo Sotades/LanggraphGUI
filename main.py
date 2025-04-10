@@ -25,6 +25,11 @@ class State(TypedDict):
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
+
+        # Queues for exchanging data between langgraph and PyQt widgets
+        self.langgraph_to_pyqt_queue = asyncio.Queue()
+        self.pyqt_to_langgraph_queue = asyncio.Queue()
+
         self.setWindowTitle("Langgraph HITL Demo")
         button = QPushButton("Start Langchain")
         button.clicked.connect(lambda: asyncio.create_task(self.langchain_app()))
@@ -109,6 +114,7 @@ class MainWindow(QMainWindow):
 
             inputs = {"messages": [HumanMessage(content="what is the weather in sf")]}
             messages = app.invoke(inputs)
+            await self.langgraph_to_pyqt_queue.put(messages)
 
             for m in messages['messages']:
                 m.pretty_print()
