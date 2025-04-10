@@ -33,14 +33,12 @@ class MainWindow(QMainWindow):
 
     async def langchain_app(self):
             result = load_dotenv()
-            await asyncio.sleep(1)
 
             @tool
             def search(query: str):
                 """Call to surf the web."""
                 # This is a placeholder, but don't tell the LLM that...
                 return ["The answer to your question lies within."]
-            print("End langchain_app")
 
             tools = [search]
 
@@ -62,9 +60,9 @@ class MainWindow(QMainWindow):
                     return "continue"
 
             # Define the function that calls the model
-            async def call_model(state: State):
+            def call_model(state: State):
                 messages = state["messages"]
-                response = await model.ainvoke(messages)
+                response = model.invoke(messages)
                 # We return a list, because this will get added to the existing list
                 return {"messages": [response]}
 
@@ -110,7 +108,7 @@ class MainWindow(QMainWindow):
             app = workflow.compile()
 
             inputs = {"messages": [HumanMessage(content="what is the weather in sf")]}
-            messages = await app.ainvoke(inputs)
+            messages = app.invoke(inputs)
 
             for m in messages['messages']:
                 m.pretty_print()
