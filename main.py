@@ -1,6 +1,6 @@
-from PySide6.QtWidgets import QApplication, QMainWindow, QPushButton
-from PySide6.QtCore import Qt
-
+from PySide6.QtWidgets import QApplication, QMainWindow, QPushButton, QVBoxLayout, QHBoxLayout, QLineEdit, QWidget
+from PySide6.QtWidgets import QTextEdit
+from PySide6.QtCore import Qt, Signal
 import PySide6.QtAsyncio as QtAsyncio
 
 import asyncio
@@ -23,6 +23,10 @@ class State(TypedDict):
     messages: Annotated[list, add_messages]
 
 class MainWindow(QMainWindow):
+
+    # Custom Signals
+    langgraph_state = Signal()
+
     def __init__(self):
         super().__init__()
 
@@ -32,9 +36,26 @@ class MainWindow(QMainWindow):
 
         self.setWindowTitle("Langgraph HITL Demo")
         button = QPushButton("Start Langchain")
+        button2 = QPushButton("Send Data Back")
+        text_edit = QTextEdit()
+        text_edit.setFixedHeight(100)
+        text_edit.setReadOnly(True)
+        # Layout
+        layout1 = QVBoxLayout()
+        layout2 = QHBoxLayout()
+
+        layout2.addWidget(button)
+        layout2.addWidget(button2)
+
+        layout1.addWidget(text_edit)
+        layout1.addLayout(layout2)
+
+        widget = QWidget()
+        widget.setLayout(layout1)
+        self.setCentralWidget(widget)
+
         button.clicked.connect(lambda: asyncio.create_task(self.langchain_app()))
-        # Set the central widget of the Window.
-        self.setCentralWidget(button)
+        self.langgraph_state.connect(lambda: asyncio.ensure_future(self.handle_langchain_state()))
 
     async def langchain_app(self):
             result = load_dotenv()
@@ -70,6 +91,8 @@ class MainWindow(QMainWindow):
                 response = model.invoke(messages)
                 # We return a list, because this will get added to the existing list
                 return {"messages": [response]}
+
+
 
             # Define a new graph
             workflow = StateGraph(State)
@@ -114,11 +137,19 @@ class MainWindow(QMainWindow):
 
             inputs = {"messages": [HumanMessage(content="what is the weather in sf")]}
             messages = app.invoke(inputs)
+
+            # Put State in an asyncio queue
             await self.langgraph_to_pyqt_queue.put(messages)
+            # Emit signal here, telling we are ready to process the State data
+            self.langgraph_state.emit()
+
 
             for m in messages['messages']:
                 m.pretty_print()
 
+    async def handle_langchain_state(self):
+        messages = await self.langgraph_to_pyqt_queue.get()
+        print(messages)
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
