@@ -19,3 +19,13 @@ class ILanggraph(metaclass=ABCMeta):
     def execute(self):
         """Execute the Langgraph graph."""
         raise NotImplementedError
+
+    @abstractmethod
+    def load_dotenv(self):
+        """Load the environment variables"""
+        raise NotImplementedError
+
+    @abstractmethod
+    def load_system_message(self):
+        """Load the system message from a file"""
+        raise NotImplementedError
