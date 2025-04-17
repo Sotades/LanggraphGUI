@@ -1,5 +1,9 @@
 from abc import ABCMeta, abstractmethod
 
+from langgraph.graph import StateGraph
+
+from sotades.langgraph.state import State
+
 
 class ILanggraph(metaclass=ABCMeta):
     @classmethod
@@ -7,7 +11,7 @@ class ILanggraph(metaclass=ABCMeta):
         return (hasattr(subclass, 'build_graph') and
                 callable(subclass.build_graph) and
                 hasattr(subclass, 'execute') and
-                callable(subclass.execute) or
+                callable(subclass.execute_graph) or
                 NotImplemented)
 
     @abstractmethod
@@ -16,7 +20,7 @@ class ILanggraph(metaclass=ABCMeta):
         raise NotImplementedError
 
     @abstractmethod
-    def execute(self):
+    def execute_graph(self, state: State):
         """Execute the Langgraph graph."""
         raise NotImplementedError
 
@@ -28,4 +32,9 @@ class ILanggraph(metaclass=ABCMeta):
     @abstractmethod
     def load_system_message(self):
         """Load the system message from a file"""
+        raise NotImplementedError
+
+    @abstractmethod
+    def display_graph(self):
+        """Display the Langgraph graph"""
         raise NotImplementedError

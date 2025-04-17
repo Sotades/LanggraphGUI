@@ -23,3 +23,7 @@ class TestHitlLanggraph(TestCase):
         self.langgraph.load_system_message()
         self.assertIsInstance(self.langgraph.system_message, SystemMessage)
 
+    def test_display_graph(self):
+        image = self.langgraph.display_graph()
+        self.assertIsNotNone()
+
