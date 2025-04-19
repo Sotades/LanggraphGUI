@@ -1,0 +1,2923 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:element name="EDIFACT" type="EDIFACT"/>
+	<xsd:complexType name="EDIFACT">
+		<xsd:sequence minOccurs="1" maxOccurs="unbounded">
+			<xsd:element name="UNB" type="UNB" minOccurs="1" maxOccurs="1"/>
+			<xsd:choice minOccurs="1" maxOccurs="unbounded">
+				<xsd:element name="INVOIC" type="INVOIC" minOccurs="1" maxOccurs="unbounded"/>
+				<xsd:sequence>
+					<xsd:element name="UNG" type="UNG" minOccurs="1" maxOccurs="1"/>
+					<xsd:element name="INVOIC" type="INVOIC" minOccurs="1" maxOccurs="unbounded"/>
+					<xsd:element name="UNE" type="UNE" minOccurs="1" maxOccurs="1"/>
+				</xsd:sequence>
+			</xsd:choice>
+			<xsd:element name="UNZ" type="UNZ" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="INVOIC">
+		<xsd:annotation>
+			<xsd:appinfo>D96A INVOIC</xsd:appinfo>
+			<xsd:documentation>Invoice message</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="UNH" type="UNH" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="BGM" type="BGM" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="DTM" type="DTM" minOccurs="1" maxOccurs="35"/>
+			<xsd:element name="PAI" type="PAI" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="ALI" type="ALI" minOccurs="0" maxOccurs="5"/>
+			<xsd:element name="IMD" type="IMD" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="FTX" type="FTX" minOccurs="0" maxOccurs="10"/>
+			<xsd:element name="GROUP_1" type="GROUP_1" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="GROUP_2" type="GROUP_2" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="GROUP_6" type="GROUP_6" minOccurs="0" maxOccurs="5"/>
+			<xsd:element name="GROUP_7" type="GROUP_7" minOccurs="0" maxOccurs="5"/>
+			<xsd:element name="GROUP_8" type="GROUP_8" minOccurs="0" maxOccurs="10"/>
+			<xsd:element name="GROUP_9" type="GROUP_9" minOccurs="0" maxOccurs="10"/>
+			<xsd:element name="GROUP_12" type="GROUP_12" minOccurs="0" maxOccurs="5"/>
+			<xsd:element name="GROUP_13" type="GROUP_13" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="GROUP_15" type="GROUP_15" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="GROUP_22" type="GROUP_22" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="GROUP_23" type="GROUP_23" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="GROUP_24" type="GROUP_24" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="GROUP_25" type="GROUP_25" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="UNS" type="UNS" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="CNT" type="CNT" minOccurs="0" maxOccurs="10"/>
+			<xsd:element name="GROUP_48" type="GROUP_48" minOccurs="1" maxOccurs="unbounded"/>
+			<xsd:element name="GROUP_50" type="GROUP_50" minOccurs="0" maxOccurs="10"/>
+			<xsd:element name="GROUP_51" type="GROUP_51" minOccurs="0" maxOccurs="15"/>
+			<xsd:element name="UNT" type="UNT" minOccurs="1" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GROUP_1">
+		<xsd:sequence minOccurs="1" maxOccurs="1">
+			<xsd:element name="RFF" type="RFF" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="DTM" type="DTM" minOccurs="0" maxOccurs="5"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GROUP_2">
+		<xsd:sequence minOccurs="1" maxOccurs="1">
+			<xsd:element name="NAD" type="NAD" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="LOC" type="LOC" minOccurs="0" maxOccurs="25"/>
+			<xsd:element name="FII" type="FII" minOccurs="0" maxOccurs="5"/>
+			<xsd:element name="GROUP_3" type="GROUP_3" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="GROUP_4" type="GROUP_4" minOccurs="0" maxOccurs="5"/>
+			<xsd:element name="GROUP_5" type="GROUP_5" minOccurs="0" maxOccurs="5"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GROUP_3">
+		<xsd:sequence minOccurs="1" maxOccurs="1">
+			<xsd:element name="RFF" type="RFF" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="DTM" type="DTM" minOccurs="0" maxOccurs="5"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GROUP_4">
+		<xsd:sequence minOccurs="1" maxOccurs="1">
+			<xsd:element name="DOC" type="DOC" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="DTM" type="DTM" minOccurs="0" maxOccurs="5"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GROUP_5">
+		<xsd:sequence minOccurs="1" maxOccurs="1">
+			<xsd:element name="CTA" type="CTA" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="COM" type="COM" minOccurs="0" maxOccurs="5"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GROUP_6">
+		<xsd:sequence minOccurs="1" maxOccurs="1">
+			<xsd:element name="TAX" type="TAX" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="MOA" type="MOA" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="LOC" type="LOC" minOccurs="0" maxOccurs="5"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GROUP_7">
+		<xsd:sequence minOccurs="1" maxOccurs="1">
+			<xsd:element name="CUX" type="CUX" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="DTM" type="DTM" minOccurs="0" maxOccurs="5"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GROUP_8">
+		<xsd:sequence minOccurs="1" maxOccurs="1">
+			<xsd:element name="PAT" type="PAT" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="DTM" type="DTM" minOccurs="0" maxOccurs="5"/>
+			<xsd:element name="PCD" type="PCD" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="MOA" type="MOA" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="PAI" type="PAI" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="FII" type="FII" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GROUP_9">
+		<xsd:sequence minOccurs="1" maxOccurs="1">
+			<xsd:element name="TDT" type="TDT" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="GROUP_10" type="GROUP_10" minOccurs="0" maxOccurs="10"/>
+			<xsd:element name="GROUP_11" type="GROUP_11" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GROUP_10">
+		<xsd:sequence minOccurs="1" maxOccurs="1">
+			<xsd:element name="LOC" type="LOC" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="DTM" type="DTM" minOccurs="0" maxOccurs="5"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GROUP_11">
+		<xsd:sequence minOccurs="1" maxOccurs="1">
+			<xsd:element name="RFF" type="RFF" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="DTM" type="DTM" minOccurs="0" maxOccurs="5"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GROUP_12">
+		<xsd:sequence minOccurs="1" maxOccurs="1">
+			<xsd:element name="TOD" type="TOD" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="LOC" type="LOC" minOccurs="0" maxOccurs="2"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GROUP_13">
+		<xsd:sequence minOccurs="1" maxOccurs="1">
+			<xsd:element name="PAC" type="PAC" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="MEA" type="MEA" minOccurs="0" maxOccurs="5"/>
+			<xsd:element name="GROUP_14" type="GROUP_14" minOccurs="0" maxOccurs="5"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GROUP_14">
+		<xsd:sequence minOccurs="1" maxOccurs="1">
+			<xsd:element name="PCI" type="PCI" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="RFF" type="RFF" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="DTM" type="DTM" minOccurs="0" maxOccurs="5"/>
+			<xsd:element name="GIN" type="GIN" minOccurs="0" maxOccurs="5"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GROUP_15">
+		<xsd:sequence minOccurs="1" maxOccurs="1">
+			<xsd:element name="ALC" type="ALC" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="ALI" type="ALI" minOccurs="0" maxOccurs="5"/>
+			<xsd:element name="GROUP_16" type="GROUP_16" minOccurs="0" maxOccurs="5"/>
+			<xsd:element name="GROUP_17" type="GROUP_17" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="GROUP_18" type="GROUP_18" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="GROUP_19" type="GROUP_19" minOccurs="0" maxOccurs="2"/>
+			<xsd:element name="GROUP_20" type="GROUP_20" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="GROUP_21" type="GROUP_21" minOccurs="0" maxOccurs="5"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GROUP_16">
+		<xsd:sequence minOccurs="1" maxOccurs="1">
+			<xsd:element name="RFF" type="RFF" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="DTM" type="DTM" minOccurs="0" maxOccurs="5"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GROUP_17">
+		<xsd:sequence minOccurs="1" maxOccurs="1">
+			<xsd:element name="QTY" type="QTY" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="RNG" type="RNG" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GROUP_18">
+		<xsd:sequence minOccurs="1" maxOccurs="1">
+			<xsd:element name="PCD" type="PCD" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="RNG" type="RNG" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GROUP_19">
+		<xsd:sequence minOccurs="1" maxOccurs="1">
+			<xsd:element name="MOA" type="MOA" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="RNG" type="RNG" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GROUP_20">
+		<xsd:sequence minOccurs="1" maxOccurs="1">
+			<xsd:element name="RTE" type="RTE" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="RNG" type="RNG" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GROUP_21">
+		<xsd:sequence minOccurs="1" maxOccurs="1">
+			<xsd:element name="TAX" type="TAX" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="MOA" type="MOA" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GROUP_22">
+		<xsd:sequence minOccurs="1" maxOccurs="1">
+			<xsd:element name="RCS" type="RCS" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="RFF" type="RFF" minOccurs="0" maxOccurs="5"/>
+			<xsd:element name="DTM" type="DTM" minOccurs="0" maxOccurs="5"/>
+			<xsd:element name="FTX" type="FTX" minOccurs="0" maxOccurs="5"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GROUP_23">
+		<xsd:sequence minOccurs="1" maxOccurs="1">
+			<xsd:element name="AJT" type="AJT" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="FTX" type="FTX" minOccurs="0" maxOccurs="5"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GROUP_24">
+		<xsd:sequence minOccurs="1" maxOccurs="1">
+			<xsd:element name="INP" type="INP" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="FTX" type="FTX" minOccurs="0" maxOccurs="5"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GROUP_25">
+		<xsd:sequence minOccurs="1" maxOccurs="1">
+			<xsd:element name="LIN" type="LIN" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="PIA" type="PIA" minOccurs="0" maxOccurs="25"/>
+			<xsd:element name="IMD" type="IMD" minOccurs="0" maxOccurs="10"/>
+			<xsd:element name="MEA" type="MEA" minOccurs="0" maxOccurs="5"/>
+			<xsd:element name="QTY" type="QTY" minOccurs="0" maxOccurs="5"/>
+			<xsd:element name="PCD" type="PCD" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="ALI" type="ALI" minOccurs="0" maxOccurs="5"/>
+			<xsd:element name="DTM" type="DTM" minOccurs="0" maxOccurs="35"/>
+			<xsd:element name="GIN" type="GIN" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="GIR" type="GIR" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="QVR" type="QVR" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="EQD" type="EQD" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="FTX" type="FTX" minOccurs="0" maxOccurs="5"/>
+			<xsd:element name="GROUP_26" type="GROUP_26" minOccurs="0" maxOccurs="5"/>
+			<xsd:element name="GROUP_27" type="GROUP_27" minOccurs="0" maxOccurs="10"/>
+			<xsd:element name="GROUP_28" type="GROUP_28" minOccurs="0" maxOccurs="25"/>
+			<xsd:element name="GROUP_29" type="GROUP_29" minOccurs="0" maxOccurs="10"/>
+			<xsd:element name="GROUP_30" type="GROUP_30" minOccurs="0" maxOccurs="10"/>
+			<xsd:element name="GROUP_32" type="GROUP_32" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="GROUP_33" type="GROUP_33" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="GROUP_34" type="GROUP_34" minOccurs="0" maxOccurs="20"/>
+			<xsd:element name="GROUP_38" type="GROUP_38" minOccurs="0" maxOccurs="15"/>
+			<xsd:element name="GROUP_44" type="GROUP_44" minOccurs="0" maxOccurs="10"/>
+			<xsd:element name="GROUP_46" type="GROUP_46" minOccurs="0" maxOccurs="5"/>
+			<xsd:element name="GROUP_47" type="GROUP_47" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GROUP_26">
+		<xsd:sequence minOccurs="1" maxOccurs="1">
+			<xsd:element name="MOA" type="MOA" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="CUX" type="CUX" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GROUP_27">
+		<xsd:sequence minOccurs="1" maxOccurs="1">
+			<xsd:element name="PAT" type="PAT" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="DTM" type="DTM" minOccurs="0" maxOccurs="5"/>
+			<xsd:element name="PCD" type="PCD" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="MOA" type="MOA" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GROUP_28">
+		<xsd:sequence minOccurs="1" maxOccurs="1">
+			<xsd:element name="PRI" type="PRI" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="APR" type="APR" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="RNG" type="RNG" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="DTM" type="DTM" minOccurs="0" maxOccurs="5"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GROUP_29">
+		<xsd:sequence minOccurs="1" maxOccurs="1">
+			<xsd:element name="RFF" type="RFF" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="DTM" type="DTM" minOccurs="0" maxOccurs="5"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GROUP_30">
+		<xsd:sequence minOccurs="1" maxOccurs="1">
+			<xsd:element name="PAC" type="PAC" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="MEA" type="MEA" minOccurs="0" maxOccurs="10"/>
+			<xsd:element name="GROUP_31" type="GROUP_31" minOccurs="0" maxOccurs="10"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GROUP_31">
+		<xsd:sequence minOccurs="1" maxOccurs="1">
+			<xsd:element name="PCI" type="PCI" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="RFF" type="RFF" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="DTM" type="DTM" minOccurs="0" maxOccurs="5"/>
+			<xsd:element name="GIN" type="GIN" minOccurs="0" maxOccurs="10"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GROUP_32">
+		<xsd:sequence minOccurs="1" maxOccurs="1">
+			<xsd:element name="LOC" type="LOC" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="QTY" type="QTY" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="DTM" type="DTM" minOccurs="0" maxOccurs="5"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GROUP_33">
+		<xsd:sequence minOccurs="1" maxOccurs="1">
+			<xsd:element name="TAX" type="TAX" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="MOA" type="MOA" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="LOC" type="LOC" minOccurs="0" maxOccurs="5"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GROUP_34">
+		<xsd:sequence minOccurs="1" maxOccurs="1">
+			<xsd:element name="NAD" type="NAD" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="LOC" type="LOC" minOccurs="0" maxOccurs="5"/>
+			<xsd:element name="GROUP_35" type="GROUP_35" minOccurs="0" maxOccurs="5"/>
+			<xsd:element name="GROUP_36" type="GROUP_36" minOccurs="0" maxOccurs="5"/>
+			<xsd:element name="GROUP_37" type="GROUP_37" minOccurs="0" maxOccurs="5"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GROUP_35">
+		<xsd:sequence minOccurs="1" maxOccurs="1">
+			<xsd:element name="RFF" type="RFF" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="DTM" type="DTM" minOccurs="0" maxOccurs="5"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GROUP_36">
+		<xsd:sequence minOccurs="1" maxOccurs="1">
+			<xsd:element name="DOC" type="DOC" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="DTM" type="DTM" minOccurs="0" maxOccurs="5"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GROUP_37">
+		<xsd:sequence minOccurs="1" maxOccurs="1">
+			<xsd:element name="CTA" type="CTA" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="COM" type="COM" minOccurs="0" maxOccurs="5"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GROUP_38">
+		<xsd:sequence minOccurs="1" maxOccurs="1">
+			<xsd:element name="ALC" type="ALC" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="ALI" type="ALI" minOccurs="0" maxOccurs="5"/>
+			<xsd:element name="DTM" type="DTM" minOccurs="0" maxOccurs="5"/>
+			<xsd:element name="GROUP_39" type="GROUP_39" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="GROUP_40" type="GROUP_40" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="GROUP_41" type="GROUP_41" minOccurs="0" maxOccurs="2"/>
+			<xsd:element name="GROUP_42" type="GROUP_42" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="GROUP_43" type="GROUP_43" minOccurs="0" maxOccurs="5"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GROUP_39">
+		<xsd:sequence minOccurs="1" maxOccurs="1">
+			<xsd:element name="QTY" type="QTY" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="RNG" type="RNG" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GROUP_40">
+		<xsd:sequence minOccurs="1" maxOccurs="1">
+			<xsd:element name="PCD" type="PCD" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="RNG" type="RNG" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GROUP_41">
+		<xsd:sequence minOccurs="1" maxOccurs="1">
+			<xsd:element name="MOA" type="MOA" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="RNG" type="RNG" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GROUP_42">
+		<xsd:sequence minOccurs="1" maxOccurs="1">
+			<xsd:element name="RTE" type="RTE" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="RNG" type="RNG" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GROUP_43">
+		<xsd:sequence minOccurs="1" maxOccurs="1">
+			<xsd:element name="TAX" type="TAX" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="MOA" type="MOA" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GROUP_44">
+		<xsd:sequence minOccurs="1" maxOccurs="1">
+			<xsd:element name="TDT" type="TDT" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="GROUP_45" type="GROUP_45" minOccurs="0" maxOccurs="10"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GROUP_45">
+		<xsd:sequence minOccurs="1" maxOccurs="1">
+			<xsd:element name="LOC" type="LOC" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="DTM" type="DTM" minOccurs="0" maxOccurs="5"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GROUP_46">
+		<xsd:sequence minOccurs="1" maxOccurs="1">
+			<xsd:element name="TOD" type="TOD" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="LOC" type="LOC" minOccurs="0" maxOccurs="2"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GROUP_47">
+		<xsd:sequence minOccurs="1" maxOccurs="1">
+			<xsd:element name="RCS" type="RCS" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="RFF" type="RFF" minOccurs="0" maxOccurs="5"/>
+			<xsd:element name="DTM" type="DTM" minOccurs="0" maxOccurs="5"/>
+			<xsd:element name="FTX" type="FTX" minOccurs="0" maxOccurs="5"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GROUP_48">
+		<xsd:sequence minOccurs="1" maxOccurs="1">
+			<xsd:element name="MOA" type="MOA" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="GROUP_49" type="GROUP_49" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GROUP_49">
+		<xsd:sequence minOccurs="1" maxOccurs="1">
+			<xsd:element name="RFF" type="RFF" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="DTM" type="DTM" minOccurs="0" maxOccurs="5"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GROUP_50">
+		<xsd:sequence minOccurs="1" maxOccurs="1">
+			<xsd:element name="TAX" type="TAX" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="MOA" type="MOA" minOccurs="0" maxOccurs="2"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GROUP_51">
+		<xsd:sequence minOccurs="1" maxOccurs="1">
+			<xsd:element name="ALC" type="ALC" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="ALI" type="ALI" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="MOA" type="MOA" minOccurs="0" maxOccurs="2"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="AJT">
+		<xsd:sequence>
+			<xsd:element name="AJT01-AdjustmentReasonCoded" type="type4465" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="AJT02-LineItemNumber" type="type1082" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ALC">
+		<xsd:sequence>
+			<xsd:element name="ALC01-AllowanceOrChargeQualifier" type="type5463" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="ALC02-AllowanceChargeInformation" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--C552-->
+					<xsd:sequence>
+						<xsd:element name="ALC0201-AllowanceOrChargeNumber" type="type1230" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="ALC0202-ChargeAllowanceDescriptionCoded" type="type5189" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="ALC03-SettlementCoded" type="type4471" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="ALC04-CalculationSequenceIndicatorCoded" type="type1227" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="ALC05-SpecialServicesIdentification" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--C214-->
+					<xsd:sequence>
+						<xsd:element name="ALC0501-SpecialServicesCoded" type="type7161" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="ALC0502-CodeListQualifier" type="type1131" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="ALC0503-CodeListResponsibleAgencyCoded" type="type3055" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="ALC0504-SpecialService" type="type7160" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="ALC0505-SpecialService" type="type7160" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ALI">
+		<xsd:sequence>
+			<xsd:element name="ALI01-CountryOfOriginCoded" type="type3239" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="ALI02-TypeOfDutyRegimeCoded" type="type9213" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="ALI03-SpecialConditionsCoded" type="type4183" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="ALI04-SpecialConditionsCoded" type="type4183" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="ALI05-SpecialConditionsCoded" type="type4183" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="ALI06-SpecialConditionsCoded" type="type4183" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="ALI07-SpecialConditionsCoded" type="type4183" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="APR">
+		<xsd:sequence>
+			<xsd:element name="APR01-ClassOfTradeCoded" type="type4043" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="APR02-PriceMultiplierInformation" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--C138-->
+					<xsd:sequence>
+						<xsd:element name="APR0201-PriceMultiplier" type="type5394" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="APR0202-PriceMultiplierQualifier" type="type5393" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="APR03-ReasonForChange" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--C960-->
+					<xsd:sequence>
+						<xsd:element name="APR0301-ChangeReasonCoded" type="type4295" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="APR0302-CodeListQualifier" type="type1131" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="APR0303-CodeListResponsibleAgencyCoded" type="type3055" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="APR0304-ChangeReason" type="type4294" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="BGM">
+		<xsd:sequence>
+			<xsd:element name="BGM01-DocumentMessageName" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--C002-->
+					<xsd:sequence>
+						<xsd:element name="BGM0101-DocumentMessageNameCoded" type="type1001" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="BGM0102-CodeListQualifier" type="type1131" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="BGM0103-CodeListResponsibleAgencyCoded" type="type3055" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="BGM0104-DocumentMessageName" type="type1000" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="BGM02-DocumentMessageNumber" type="type1004" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="BGM03-MessageFunctionCoded" type="type1225" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="BGM04-ResponseTypeCoded" type="type4343" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CNT">
+		<xsd:sequence>
+			<xsd:element name="CNT01-Control" minOccurs="1" maxOccurs="1">
+				<xsd:complexType><!--C270-->
+					<xsd:sequence>
+						<xsd:element name="CNT0101-ControlQualifier" type="type6069" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="CNT0102-ControlValue" type="type6066" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="CNT0103-MeasureUnitQualifier" type="type6411" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="COM">
+		<xsd:sequence>
+			<xsd:element name="COM01-CommunicationContact" minOccurs="1" maxOccurs="1">
+				<xsd:complexType><!--C076-->
+					<xsd:sequence>
+						<xsd:element name="COM0101-CommunicationNumber" type="type3148" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="COM0102-CommunicationChannelQualifier" type="type3155" minOccurs="1" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CTA">
+		<xsd:sequence>
+			<xsd:element name="CTA01-ContactFunctionCoded" type="type3139" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="CTA02-DepartmentOrEmployeeDetails" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--C056-->
+					<xsd:sequence>
+						<xsd:element name="CTA0201-DepartmentOrEmployeeIdentification" type="type3413" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="CTA0202-DepartmentOrEmployee" type="type3412" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CUX">
+		<xsd:sequence>
+			<xsd:element name="CUX01-CurrencyDetails" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--C504-->
+					<xsd:sequence>
+						<xsd:element name="CUX0101-CurrencyDetailsQualifier" type="type6347" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="CUX0102-CurrencyCoded" type="type6345" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="CUX0103-CurrencyQualifier" type="type6343" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="CUX0104-CurrencyRateBase" type="type6348" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="CUX02-CurrencyDetails" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--C504-->
+					<xsd:sequence>
+						<xsd:element name="CUX0201-CurrencyDetailsQualifier" type="type6347" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="CUX0202-CurrencyCoded" type="type6345" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="CUX0203-CurrencyQualifier" type="type6343" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="CUX0204-CurrencyRateBase" type="type6348" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="CUX03-RateOfExchange" type="type5402" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="CUX04-CurrencyMarketExchangeCoded" type="type6341" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="DOC">
+		<xsd:sequence>
+			<xsd:element name="DOC01-DocumentMessageName" minOccurs="1" maxOccurs="1">
+				<xsd:complexType><!--C002-->
+					<xsd:sequence>
+						<xsd:element name="DOC0101-DocumentMessageNameCoded" type="type1001" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="DOC0102-CodeListQualifier" type="type1131" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="DOC0103-CodeListResponsibleAgencyCoded" type="type3055" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="DOC0104-DocumentMessageName" type="type1000" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="DOC02-DocumentMessageDetails" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--C503-->
+					<xsd:sequence>
+						<xsd:element name="DOC0201-DocumentMessageNumber" type="type1004" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="DOC0202-DocumentMessageStatusCoded" type="type1373" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="DOC0203-DocumentMessageSource" type="type1366" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="DOC0204-LanguageCoded" type="type3453" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="DOC03-CommunicationChannelIdentifierCoded" type="type3153" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="DOC04-NumberOfCopiesOfDocumentRequired" type="type1220" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="DOC05-NumberOfOriginalsOfDocumentRequired" type="type1218" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="DTM">
+		<xsd:sequence>
+			<xsd:element name="DTM01-DateTimePeriod" minOccurs="1" maxOccurs="1">
+				<xsd:complexType><!--C507-->
+					<xsd:sequence>
+						<xsd:element name="DTM0101-DateTimePeriodQualifier" type="type2005" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="DTM0102-DateTimePeriod" type="type2380" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="DTM0103-DateTimePeriodFormatQualifier" type="type2379" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="EQD">
+		<xsd:sequence>
+			<xsd:element name="EQD01-EquipmentQualifier" type="type8053" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="EQD02-EquipmentIdentification" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--C237-->
+					<xsd:sequence>
+						<xsd:element name="EQD0201-EquipmentIdentificationNumber" type="type8260" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="EQD0202-CodeListQualifier" type="type1131" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="EQD0203-CodeListResponsibleAgencyCoded" type="type3055" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="EQD0204-CountryCoded" type="type3207" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="EQD03-EquipmentSizeAndType" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--C224-->
+					<xsd:sequence>
+						<xsd:element name="EQD0301-EquipmentSizeAndTypeIdentification" type="type8155" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="EQD0302-CodeListQualifier" type="type1131" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="EQD0303-CodeListResponsibleAgencyCoded" type="type3055" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="EQD0304-EquipmentSizeAndType" type="type8154" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="EQD04-EquipmentSupplierCoded" type="type8077" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="EQD05-EquipmentStatusCoded" type="type8249" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="EQD06-FullEmptyIndicatorCoded" type="type8169" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="FII">
+		<xsd:sequence>
+			<xsd:element name="FII01-PartyQualifier" type="type3035" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="FII02-AccountIdentification" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--C078-->
+					<xsd:sequence>
+						<xsd:element name="FII0201-AccountHolderNumber" type="type3194" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="FII0202-AccountHolderName" type="type3192" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="FII0203-AccountHolderName" type="type3192" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="FII0204-CurrencyCoded" type="type6345" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="FII03-InstitutionIdentification" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--C088-->
+					<xsd:sequence>
+						<xsd:element name="FII0301-InstitutionNameIdentification" type="type3433" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="FII0302-CodeListQualifier" type="type1131" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="FII0303-CodeListResponsibleAgencyCoded" type="type3055" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="FII0304-InstitutionBranchNumber" type="type3434" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="FII0305-CodeListQualifier" type="type1131" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="FII0306-CodeListResponsibleAgencyCoded" type="type3055" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="FII0307-InstitutionName" type="type3432" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="FII0308-InstitutionBranchPlace" type="type3436" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="FII04-CountryCoded" type="type3207" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="FTX">
+		<xsd:sequence>
+			<xsd:element name="FTX01-TextSubjectQualifier" type="type4451" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="FTX02-TextFunctionCoded" type="type4453" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="FTX03-TextReference" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--C107-->
+					<xsd:sequence>
+						<xsd:element name="FTX0301-FreeTextCoded" type="type4441" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="FTX0302-CodeListQualifier" type="type1131" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="FTX0303-CodeListResponsibleAgencyCoded" type="type3055" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="FTX04-TextLiteral" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--C108-->
+					<xsd:sequence>
+						<xsd:element name="FTX0401-FreeText" type="type4440" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="FTX0402-FreeText" type="type4440" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="FTX0403-FreeText" type="type4440" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="FTX0404-FreeText" type="type4440" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="FTX0405-FreeText" type="type4440" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="FTX05-LanguageCoded" type="type3453" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GIN">
+		<xsd:sequence>
+			<xsd:element name="GIN01-IdentityNumberQualifier" type="type7405" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="GIN02-IdentityNumberRange" minOccurs="1" maxOccurs="1">
+				<xsd:complexType><!--C208-->
+					<xsd:sequence>
+						<xsd:element name="GIN0201-IdentityNumber" type="type7402" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="GIN0202-IdentityNumber" type="type7402" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="GIN03-IdentityNumberRange" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--C208-->
+					<xsd:sequence>
+						<xsd:element name="GIN0301-IdentityNumber" type="type7402" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="GIN0302-IdentityNumber" type="type7402" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="GIN04-IdentityNumberRange" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--C208-->
+					<xsd:sequence>
+						<xsd:element name="GIN0401-IdentityNumber" type="type7402" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="GIN0402-IdentityNumber" type="type7402" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="GIN05-IdentityNumberRange" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--C208-->
+					<xsd:sequence>
+						<xsd:element name="GIN0501-IdentityNumber" type="type7402" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="GIN0502-IdentityNumber" type="type7402" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="GIN06-IdentityNumberRange" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--C208-->
+					<xsd:sequence>
+						<xsd:element name="GIN0601-IdentityNumber" type="type7402" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="GIN0602-IdentityNumber" type="type7402" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GIR">
+		<xsd:sequence>
+			<xsd:element name="GIR01-SetIdentificationQualifier" type="type7297" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="GIR02-IdentificationNumber" minOccurs="1" maxOccurs="1">
+				<xsd:complexType><!--C206-->
+					<xsd:sequence>
+						<xsd:element name="GIR0201-IdentityNumber" type="type7402" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="GIR0202-IdentityNumberQualifier" type="type7405" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="GIR0203-StatusCoded" type="type4405" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="GIR03-IdentificationNumber" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--C206-->
+					<xsd:sequence>
+						<xsd:element name="GIR0301-IdentityNumber" type="type7402" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="GIR0302-IdentityNumberQualifier" type="type7405" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="GIR0303-StatusCoded" type="type4405" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="GIR04-IdentificationNumber" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--C206-->
+					<xsd:sequence>
+						<xsd:element name="GIR0401-IdentityNumber" type="type7402" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="GIR0402-IdentityNumberQualifier" type="type7405" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="GIR0403-StatusCoded" type="type4405" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="GIR05-IdentificationNumber" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--C206-->
+					<xsd:sequence>
+						<xsd:element name="GIR0501-IdentityNumber" type="type7402" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="GIR0502-IdentityNumberQualifier" type="type7405" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="GIR0503-StatusCoded" type="type4405" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="GIR06-IdentificationNumber" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--C206-->
+					<xsd:sequence>
+						<xsd:element name="GIR0601-IdentityNumber" type="type7402" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="GIR0602-IdentityNumberQualifier" type="type7405" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="GIR0603-StatusCoded" type="type4405" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="IMD">
+		<xsd:sequence>
+			<xsd:element name="IMD01-ItemDescriptionTypeCoded" type="type7077" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="IMD02-ItemCharacteristicCoded" type="type7081" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="IMD03-ItemDescription" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--C273-->
+					<xsd:sequence>
+						<xsd:element name="IMD0301-ItemDescriptionIdentification" type="type7009" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="IMD0302-CodeListQualifier" type="type1131" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="IMD0303-CodeListResponsibleAgencyCoded" type="type3055" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="IMD0304-ItemDescription" type="type7008" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="IMD0305-ItemDescription" type="type7008" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="IMD0306-LanguageCoded" type="type3453" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="IMD04-SurfaceLayerIndicatorCoded" type="type7383" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="INP">
+		<xsd:sequence>
+			<xsd:element name="INP01-PartiesToInstruction" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--C849-->
+					<xsd:sequence>
+						<xsd:element name="INP0101-PartyEnactingInstructionIdentification" type="type3301" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="INP0102-RecipientOfTheInstructionIdentification" type="type3285" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="INP02-Instruction" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--C522-->
+					<xsd:sequence>
+						<xsd:element name="INP0201-InstructionQualifier" type="type4403" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="INP0202-InstructionCoded" type="type4401" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="INP0203-CodeListQualifier" type="type1131" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="INP0204-CodeListResponsibleAgencyCoded" type="type3055" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="INP0205-Instruction" type="type4400" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="INP03-StatusOfInstruction" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--C850-->
+					<xsd:sequence>
+						<xsd:element name="INP0301-StatusCoded" type="type4405" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="INP0302-PartyName" type="type3036" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="INP04-ActionRequestNotificationCoded" type="type1229" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="LIN">
+		<xsd:sequence>
+			<xsd:element name="LIN01-LineItemNumber" type="type1082" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="LIN02-ActionRequestNotificationCoded" type="type1229" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="LIN03-ItemNumberIdentification" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--C212-->
+					<xsd:sequence>
+						<xsd:element name="LIN0301-ItemNumber" type="type7140" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="LIN0302-ItemNumberTypeCoded" type="type7143" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="LIN0303-CodeListQualifier" type="type1131" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="LIN0304-CodeListResponsibleAgencyCoded" type="type3055" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="LIN04-Sub-LineInformation" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--C829-->
+					<xsd:sequence>
+						<xsd:element name="LIN0401-Sub-LineIndicatorCoded" type="type5495" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="LIN0402-LineItemNumber" type="type1082" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="LIN05-ConfigurationLevel" type="type1222" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="LIN06-ConfigurationCoded" type="type7083" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="LOC">
+		<xsd:sequence>
+			<xsd:element name="LOC01-PlaceLocationQualifier" type="type3227" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="LOC02-LocationIdentification" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--C517-->
+					<xsd:sequence>
+						<xsd:element name="LOC0201-PlaceLocationIdentification" type="type3225" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="LOC0202-CodeListQualifier" type="type1131" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="LOC0203-CodeListResponsibleAgencyCoded" type="type3055" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="LOC0204-PlaceLocation" type="type3224" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="LOC03-RelatedLocationOneIdentification" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--C519-->
+					<xsd:sequence>
+						<xsd:element name="LOC0301-RelatedPlaceLocationOneIdentification" type="type3223" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="LOC0302-CodeListQualifier" type="type1131" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="LOC0303-CodeListResponsibleAgencyCoded" type="type3055" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="LOC0304-RelatedPlaceLocationOne" type="type3222" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="LOC04-RelatedLocationTwoIdentification" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--C553-->
+					<xsd:sequence>
+						<xsd:element name="LOC0401-RelatedPlaceLocationTwoIdentification" type="type3233" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="LOC0402-CodeListQualifier" type="type1131" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="LOC0403-CodeListResponsibleAgencyCoded" type="type3055" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="LOC0404-RelatedPlaceLocationTwo" type="type3232" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="LOC05-RelationCoded" type="type5479" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="MEA">
+		<xsd:sequence>
+			<xsd:element name="MEA01-MeasurementApplicationQualifier" type="type6311" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="MEA02-MeasurementDetails" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--C502-->
+					<xsd:sequence>
+						<xsd:element name="MEA0201-MeasurementDimensionCoded" type="type6313" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="MEA0202-MeasurementSignificanceCoded" type="type6321" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="MEA0203-MeasurementAttributeCoded" type="type6155" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="MEA0204-MeasurementAttribute" type="type6154" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="MEA03-ValueRange" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--C174-->
+					<xsd:sequence>
+						<xsd:element name="MEA0301-MeasureUnitQualifier" type="type6411" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="MEA0302-MeasurementValue" type="type6314" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="MEA0303-RangeMinimum" type="type6162" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="MEA0304-RangeMaximum" type="type6152" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="MEA0305-SignificantDigits" type="type6432" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="MEA04-SurfaceLayerIndicatorCoded" type="type7383" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="MOA">
+		<xsd:sequence>
+			<xsd:element name="MOA01-MonetaryAmount" minOccurs="1" maxOccurs="1">
+				<xsd:complexType><!--C516-->
+					<xsd:sequence>
+						<xsd:element name="MOA0101-MonetaryAmountTypeQualifier" type="type5025" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="MOA0102-MonetaryAmount" type="type5004" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="MOA0103-CurrencyCoded" type="type6345" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="MOA0104-CurrencyQualifier" type="type6343" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="MOA0105-StatusCoded" type="type4405" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="NAD">
+		<xsd:sequence>
+			<xsd:element name="NAD01-PartyQualifier" type="type3035" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="NAD02-PartyIdentificationDetails" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--C082-->
+					<xsd:sequence>
+						<xsd:element name="NAD0201-PartyIdIdentification" type="type3039" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="NAD0202-CodeListQualifier" type="type1131" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="NAD0203-CodeListResponsibleAgencyCoded" type="type3055" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="NAD03-NameAndAddress" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--C058-->
+					<xsd:sequence>
+						<xsd:element name="NAD0301-NameAndAddressLine" type="type3124" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="NAD0302-NameAndAddressLine" type="type3124" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="NAD0303-NameAndAddressLine" type="type3124" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="NAD0304-NameAndAddressLine" type="type3124" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="NAD0305-NameAndAddressLine" type="type3124" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="NAD04-PartyName" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--C080-->
+					<xsd:sequence>
+						<xsd:element name="NAD0401-PartyName" type="type3036" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="NAD0402-PartyName" type="type3036" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="NAD0403-PartyName" type="type3036" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="NAD0404-PartyName" type="type3036" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="NAD0405-PartyName" type="type3036" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="NAD0406-PartyNameFormatCoded" type="type3045" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="NAD05-Street" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--C059-->
+					<xsd:sequence>
+						<xsd:element name="NAD0501-StreetAndNumberPOBox" type="type3042" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="NAD0502-StreetAndNumberPOBox" type="type3042" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="NAD0503-StreetAndNumberPOBox" type="type3042" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="NAD0504-StreetAndNumberPOBox" type="type3042" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="NAD06-CityName" type="type3164" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="NAD07-CountrySub-EntityIdentification" type="type3229" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="NAD08-PostcodeIdentification" type="type3251" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="NAD09-CountryCoded" type="type3207" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="PAC">
+		<xsd:sequence>
+			<xsd:element name="PAC01-NumberOfPackages" type="type7224" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="PAC02-PackagingDetails" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--C531-->
+					<xsd:sequence>
+						<xsd:element name="PAC0201-PackagingLevelCoded" type="type7075" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="PAC0202-PackagingRelatedInformationCoded" type="type7233" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="PAC0203-PackagingTermsAndConditionsCoded" type="type7073" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="PAC03-PackageType" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--C202-->
+					<xsd:sequence>
+						<xsd:element name="PAC0301-TypeOfPackagesIdentification" type="type7065" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="PAC0302-CodeListQualifier" type="type1131" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="PAC0303-CodeListResponsibleAgencyCoded" type="type3055" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="PAC0304-TypeOfPackages" type="type7064" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="PAC04-PackageTypeIdentification" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--C402-->
+					<xsd:sequence>
+						<xsd:element name="PAC0401-ItemDescriptionTypeCoded" type="type7077" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="PAC0402-TypeOfPackages" type="type7064" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="PAC0403-ItemNumberTypeCoded" type="type7143" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="PAC0404-TypeOfPackages" type="type7064" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="PAC0405-ItemNumberTypeCoded" type="type7143" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="PAC05-ReturnablePackageDetails" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--C532-->
+					<xsd:sequence>
+						<xsd:element name="PAC0501-ReturnablePackageFreightPayment" type="type8395" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="PAC0502-ReturnablePackageLoadContentsCode" type="type8393" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="PAI">
+		<xsd:sequence>
+			<xsd:element name="PAI01-PaymentInstructionDetails" minOccurs="1" maxOccurs="1">
+				<xsd:complexType><!--C534-->
+					<xsd:sequence>
+						<xsd:element name="PAI0101-PaymentConditionsCoded" type="type4439" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="PAI0102-PaymentGuaranteeCoded" type="type4431" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="PAI0103-PaymentMeansCoded" type="type4461" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="PAI0104-CodeListQualifier" type="type1131" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="PAI0105-CodeListResponsibleAgencyCoded" type="type3055" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="PAI0106-PaymentChannelCoded" type="type4435" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="PAT">
+		<xsd:sequence>
+			<xsd:element name="PAT01-PaymentTermsTypeQualifier" type="type4279" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="PAT02-PaymentTerms" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--C110-->
+					<xsd:sequence>
+						<xsd:element name="PAT0201-TermsOfPaymentIdentification" type="type4277" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="PAT0202-CodeListQualifier" type="type1131" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="PAT0203-CodeListResponsibleAgencyCoded" type="type3055" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="PAT0204-TermsOfPayment" type="type4276" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="PAT0205-TermsOfPayment" type="type4276" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="PAT03-TermsTimeInformation" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--C112-->
+					<xsd:sequence>
+						<xsd:element name="PAT0301-PaymentTimeReferenceCoded" type="type2475" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="PAT0302-TimeRelationCoded" type="type2009" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="PAT0303-TypeOfPeriodCoded" type="type2151" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="PAT0304-NumberOfPeriods" type="type2152" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="PCD">
+		<xsd:sequence>
+			<xsd:element name="PCD01-PercentageDetails" minOccurs="1" maxOccurs="1">
+				<xsd:complexType><!--C501-->
+					<xsd:sequence>
+						<xsd:element name="PCD0101-PercentageQualifier" type="type5245" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="PCD0102-Percentage" type="type5482" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="PCD0103-PercentageBasisCoded" type="type5249" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="PCD0104-CodeListQualifier" type="type1131" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="PCD0105-CodeListResponsibleAgencyCoded" type="type3055" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="PCI">
+		<xsd:sequence>
+			<xsd:element name="PCI01-MarkingInstructionsCoded" type="type4233" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="PCI02-MarksLabels" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--C210-->
+					<xsd:sequence>
+						<xsd:element name="PCI0201-ShippingMarks" type="type7102" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="PCI0202-ShippingMarks" type="type7102" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="PCI0203-ShippingMarks" type="type7102" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="PCI0204-ShippingMarks" type="type7102" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="PCI0205-ShippingMarks" type="type7102" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="PCI0206-ShippingMarks" type="type7102" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="PCI0207-ShippingMarks" type="type7102" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="PCI0208-ShippingMarks" type="type7102" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="PCI0209-ShippingMarks" type="type7102" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="PCI0210-ShippingMarks" type="type7102" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="PCI03-ContainerPackageStatusCoded" type="type8275" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="PCI04-TypeOfMarking" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--C827-->
+					<xsd:sequence>
+						<xsd:element name="PCI0401-TypeOfMarkingCoded" type="type7511" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="PCI0402-CodeListQualifier" type="type1131" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="PCI0403-CodeListResponsibleAgencyCoded" type="type3055" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="PIA">
+		<xsd:sequence>
+			<xsd:element name="PIA01-ProductIdFunctionQualifier" type="type4347" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="PIA02-ItemNumberIdentification" minOccurs="1" maxOccurs="1">
+				<xsd:complexType><!--C212-->
+					<xsd:sequence>
+						<xsd:element name="PIA0201-ItemNumber" type="type7140" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="PIA0202-ItemNumberTypeCoded" type="type7143" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="PIA0203-CodeListQualifier" type="type1131" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="PIA0204-CodeListResponsibleAgencyCoded" type="type3055" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="PIA03-ItemNumberIdentification" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--C212-->
+					<xsd:sequence>
+						<xsd:element name="PIA0301-ItemNumber" type="type7140" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="PIA0302-ItemNumberTypeCoded" type="type7143" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="PIA0303-CodeListQualifier" type="type1131" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="PIA0304-CodeListResponsibleAgencyCoded" type="type3055" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="PIA04-ItemNumberIdentification" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--C212-->
+					<xsd:sequence>
+						<xsd:element name="PIA0401-ItemNumber" type="type7140" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="PIA0402-ItemNumberTypeCoded" type="type7143" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="PIA0403-CodeListQualifier" type="type1131" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="PIA0404-CodeListResponsibleAgencyCoded" type="type3055" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="PIA05-ItemNumberIdentification" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--C212-->
+					<xsd:sequence>
+						<xsd:element name="PIA0501-ItemNumber" type="type7140" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="PIA0502-ItemNumberTypeCoded" type="type7143" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="PIA0503-CodeListQualifier" type="type1131" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="PIA0504-CodeListResponsibleAgencyCoded" type="type3055" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="PIA06-ItemNumberIdentification" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--C212-->
+					<xsd:sequence>
+						<xsd:element name="PIA0601-ItemNumber" type="type7140" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="PIA0602-ItemNumberTypeCoded" type="type7143" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="PIA0603-CodeListQualifier" type="type1131" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="PIA0604-CodeListResponsibleAgencyCoded" type="type3055" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="PRI">
+		<xsd:sequence>
+			<xsd:element name="PRI01-PriceInformation" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--C509-->
+					<xsd:sequence>
+						<xsd:element name="PRI0101-PriceQualifier" type="type5125" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="PRI0102-Price" type="type5118" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="PRI0103-PriceTypeCoded" type="type5375" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="PRI0104-PriceTypeQualifier" type="type5387" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="PRI0105-UnitPriceBasis" type="type5284" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="PRI0106-MeasureUnitQualifier" type="type6411" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="PRI02-Sub-LinePriceChangeCoded" type="type5213" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="QTY">
+		<xsd:sequence>
+			<xsd:element name="QTY01-QuantityDetails" minOccurs="1" maxOccurs="1">
+				<xsd:complexType><!--C186-->
+					<xsd:sequence>
+						<xsd:element name="QTY0101-QuantityQualifier" type="type6063" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="QTY0102-Quantity" type="type6060" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="QTY0103-MeasureUnitQualifier" type="type6411" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="QVR">
+		<xsd:sequence>
+			<xsd:element name="QVR01-QuantityDifferenceInformation" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--C279-->
+					<xsd:sequence>
+						<xsd:element name="QVR0101-QuantityDifference" type="type6064" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="QVR0102-QuantityQualifier" type="type6063" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="QVR02-DiscrepancyCoded" type="type4221" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="QVR03-ReasonForChange" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--C960-->
+					<xsd:sequence>
+						<xsd:element name="QVR0301-ChangeReasonCoded" type="type4295" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="QVR0302-CodeListQualifier" type="type1131" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="QVR0303-CodeListResponsibleAgencyCoded" type="type3055" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="QVR0304-ChangeReason" type="type4294" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="RCS">
+		<xsd:sequence>
+			<xsd:element name="RCS01-SectorSubjectIdentificationQualifier" type="type7293" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="RCS02-RequirementConditionIdentification" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--C550-->
+					<xsd:sequence>
+						<xsd:element name="RCS0201-RequirementConditionIdentification" type="type7295" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="RCS0202-CodeListQualifier" type="type1131" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="RCS0203-CodeListResponsibleAgencyCoded" type="type3055" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="RCS0204-RequirementOrCondition" type="type7294" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="RCS03-ActionRequestNotificationCoded" type="type1229" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="RFF">
+		<xsd:sequence>
+			<xsd:element name="RFF01-Reference" minOccurs="1" maxOccurs="1">
+				<xsd:complexType><!--C506-->
+					<xsd:sequence>
+						<xsd:element name="RFF0101-ReferenceQualifier" type="type1153" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="RFF0102-ReferenceNumber" type="type1154" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="RFF0103-LineNumber" type="type1156" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="RFF0104-ReferenceVersionNumber" type="type4000" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="RNG">
+		<xsd:sequence>
+			<xsd:element name="RNG01-RangeTypeQualifier" type="type6167" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="RNG02-Range" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--C280-->
+					<xsd:sequence>
+						<xsd:element name="RNG0201-MeasureUnitQualifier" type="type6411" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="RNG0202-RangeMinimum" type="type6162" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="RNG0203-RangeMaximum" type="type6152" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="RTE">
+		<xsd:sequence>
+			<xsd:element name="RTE01-RateDetails" minOccurs="1" maxOccurs="1">
+				<xsd:complexType><!--C128-->
+					<xsd:sequence>
+						<xsd:element name="RTE0101-RateTypeQualifier" type="type5419" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="RTE0102-RatePerUnit" type="type5420" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="RTE0103-UnitPriceBasis" type="type5284" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="RTE0104-MeasureUnitQualifier" type="type6411" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="TAX">
+		<xsd:sequence>
+			<xsd:element name="TAX01-DutyTaxFeeFunctionQualifier" type="type5283" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="TAX02-DutyTaxFeeType" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--C241-->
+					<xsd:sequence>
+						<xsd:element name="TAX0201-DutyTaxFeeTypeCoded" type="type5153" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="TAX0202-CodeListQualifier" type="type1131" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="TAX0203-CodeListResponsibleAgencyCoded" type="type3055" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="TAX0204-DutyTaxFeeType" type="type5152" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="TAX03-DutyTaxFeeAccountDetail" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--C533-->
+					<xsd:sequence>
+						<xsd:element name="TAX0301-DutyTaxFeeAccountIdentification" type="type5289" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="TAX0302-CodeListQualifier" type="type1131" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="TAX0303-CodeListResponsibleAgencyCoded" type="type3055" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="TAX04-DutyTaxFeeAssessmentBasis" type="type5286" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="TAX05-DutyTaxFeeDetail" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--C243-->
+					<xsd:sequence>
+						<xsd:element name="TAX0501-DutyTaxFeeRateIdentification" type="type5279" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="TAX0502-CodeListQualifier" type="type1131" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="TAX0503-CodeListResponsibleAgencyCoded" type="type3055" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="TAX0504-DutyTaxFeeRate" type="type5278" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="TAX0505-DutyTaxFeeRateBasisIdentification" type="type5273" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="TAX0506-CodeListQualifier" type="type1131" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="TAX0507-CodeListResponsibleAgencyCoded" type="type3055" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="TAX06-DutyTaxFeeCategoryCoded" type="type5305" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="TAX07-PartyTaxIdentificationNumber" type="type3446" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="TDT">
+		<xsd:sequence>
+			<xsd:element name="TDT01-TransportStageQualifier" type="type8051" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="TDT02-ConveyanceReferenceNumber" type="type8028" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="TDT03-ModeOfTransport" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--C220-->
+					<xsd:sequence>
+						<xsd:element name="TDT0301-ModeOfTransportCoded" type="type8067" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="TDT0302-ModeOfTransport" type="type8066" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="TDT04-TransportMeans" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--C228-->
+					<xsd:sequence>
+						<xsd:element name="TDT0401-TypeOfMeansOfTransportIdentification" type="type8179" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="TDT0402-TypeOfMeansOfTransport" type="type8178" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="TDT05-Carrier" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--C040-->
+					<xsd:sequence>
+						<xsd:element name="TDT0501-CarrierIdentification" type="type3127" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="TDT0502-CodeListQualifier" type="type1131" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="TDT0503-CodeListResponsibleAgencyCoded" type="type3055" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="TDT0504-CarrierName" type="type3128" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="TDT06-TransitDirectionCoded" type="type8101" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="TDT07-ExcessTransportationInformation" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--C401-->
+					<xsd:sequence>
+						<xsd:element name="TDT0701-ExcessTransportationReasonCoded" type="type8457" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="TDT0702-ExcessTransportationResponsibilityCoded" type="type8459" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="TDT0703-CustomerAuthorizationNumber" type="type7130" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="TDT08-TransportIdentification" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--C222-->
+					<xsd:sequence>
+						<xsd:element name="TDT0801-IdOfMeansOfTransportIdentification" type="type8213" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="TDT0802-CodeListQualifier" type="type1131" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="TDT0803-CodeListResponsibleAgencyCoded" type="type3055" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="TDT0804-IdOfTheMeansOfTransport" type="type8212" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="TDT0805-NationalityOfMeansOfTransportCoded" type="type8453" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="TDT09-TransportOwnershipCoded" type="type8281" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="TOD">
+		<xsd:sequence>
+			<xsd:element name="TOD01-TermsOfDeliveryOrTransportFunctionCoded" type="type4055" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="TOD02-TransportChargesMethodOfPaymentCoded" type="type4215" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="TOD03-TermsOfDeliveryOrTransport" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--C100-->
+					<xsd:sequence>
+						<xsd:element name="TOD0301-TermsOfDeliveryOrTransportCoded" type="type4053" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="TOD0302-CodeListQualifier" type="type1131" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="TOD0303-CodeListResponsibleAgencyCoded" type="type3055" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="TOD0304-TermsOfDeliveryOrTransport" type="type4052" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="TOD0305-TermsOfDeliveryOrTransport" type="type4052" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="UNB">
+		<xsd:sequence>
+			<xsd:element name="UNB01-SyntaxIdentifier" minOccurs="1" maxOccurs="1">
+				<xsd:complexType><!--S001-->
+					<xsd:sequence>
+						<xsd:element name="UNB0101-SyntaxIdentifier" type="type0001" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="UNB0102-SyntaxVersionNumber" type="type0002" minOccurs="1" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="UNB02-InterchangeSender" minOccurs="1" maxOccurs="1">
+				<xsd:complexType><!--S002-->
+					<xsd:sequence>
+						<xsd:element name="UNB0201-SenderIdentification" type="type0004" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="UNB0202-PartnerIdentificationCodeQualifier" type="type0007" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="UNB0203-AddressForReverseRouting" type="type0008" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="UNB03-InterchangeRecipient" minOccurs="1" maxOccurs="1">
+				<xsd:complexType><!--S003-->
+					<xsd:sequence>
+						<xsd:element name="UNB0301-RecipientIdentification" type="type0010" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="UNB0302-PartnerIdentificationCodeQualifier" type="type0007" minOccurs="0" maxOccurs="1"/>
+						<xsd:element name="UNB0303-RoutingAddress" type="type0014" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="UNB04-DateTimeOfPreparation" minOccurs="1" maxOccurs="1">
+				<xsd:complexType><!--S004-->
+					<xsd:sequence>
+						<xsd:element name="UNB0401-DateOfPreparation" type="type0017" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="UNB0402-TimeOfPreparation" type="type0019" minOccurs="1" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="UNB05-InterchangeControlReference" type="type0020" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="UNB06-RecipientsReferencePassword" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--S005-->
+					<xsd:sequence>
+						<xsd:element name="UNB0601-RecipientsReferencePassword" type="type0022" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="UNB0602-RecipientsReferencePasswordQualifier" type="type0025" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="UNB07-ApplicationReference" type="type0026" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="UNB08-ProcessingPriorityCode" type="type0029" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="UNB09-AcknowledgementRequest" type="type0031" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="UNB10-CommunicationsAgreementId" type="type0032" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="UNB11-TestIndicator" type="type0035" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="UNE">
+		<xsd:sequence>
+			<xsd:element name="UNE01-NumberOfMessages" type="type0060" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="UNE02-FunctionalGroupReferenceNumber" type="type0048" minOccurs="1" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="UNG">
+		<xsd:sequence>
+			<xsd:element name="UNG01-FunctionalGroupIdentification" type="type0038" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="UNG02-ApplicationSendersIdentification" minOccurs="1" maxOccurs="1">
+				<xsd:complexType><!--S006-->
+					<xsd:sequence>
+						<xsd:element name="UNG0201-SenderIdentification" type="type0040" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="UNG0202-PartnerIdentificationCodeQualifier" type="type0007" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="UNG03-ApplicationRecipientsIdentification" minOccurs="1" maxOccurs="1">
+				<xsd:complexType><!--S007-->
+					<xsd:sequence>
+						<xsd:element name="UNG0301-RecipientsIdentification" type="type0044" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="UNG0302-PartnerIdentificationCodeQualifier" type="type0007" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="UNG04-DateTimeOfPreparation" minOccurs="1" maxOccurs="1">
+				<xsd:complexType><!--S004-->
+					<xsd:sequence>
+						<xsd:element name="UNG0401-DateOfPreparation" type="type0017" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="UNG0402-TimeOfPreparation" type="type0019" minOccurs="1" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="UNG05-FunctionalGroupReferenceNumber" type="type0048" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="UNG06-ControllingAgency" type="type0051" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="UNG07-MessageVersion" minOccurs="1" maxOccurs="1">
+				<xsd:complexType><!--S008-->
+					<xsd:sequence>
+						<xsd:element name="UNG0701-MessageVersionNumber" type="type0052" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="UNG0702-MessageReleaseNumber" type="type0054" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="UNG0703-AssociationAssignedCode" type="type0057" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="UNG08-ApplicationPassword" type="type0058" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="UNH">
+		<xsd:sequence>
+			<xsd:element name="UNH01-MessageReferenceNumber" type="type0062" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="UNH02-MessageIdentifier" minOccurs="1" maxOccurs="1">
+				<xsd:complexType><!--S009-->
+					<xsd:sequence>
+						<xsd:element name="UNH0201-MessageType" type="type0065" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="UNH0202-MessageVersionNumber" type="type0052" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="UNH0203-MessageReleaseNumber" type="type0054" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="UNH0204-ControllingAgency" type="type0051" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="UNH0205-AssociationAssignedCode" type="type0057" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="UNH03-CommonAccessReference" type="type0068" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="UNH04-StatusOfTheTransfer" minOccurs="0" maxOccurs="1">
+				<xsd:complexType><!--S010-->
+					<xsd:sequence>
+						<xsd:element name="UNH0401-SequenceOfTransfers" type="type0070" minOccurs="1" maxOccurs="1"/>
+						<xsd:element name="UNH0402-FirstAndLastTransfer" type="type0073" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="UNS">
+		<xsd:sequence>
+			<xsd:element name="UNS01-SectionIdentification" type="type0081" minOccurs="1" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="UNT">
+		<xsd:sequence>
+			<xsd:element name="UNT01-NumberOfSegmentsInTheMessage" type="type0074" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="UNT02-MessageReferenceNumber" type="type0062" minOccurs="1" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="UNZ">
+		<xsd:sequence>
+			<xsd:element name="UNZ01-InterchangeControlCount" type="type0036" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="UNZ02-InterchangeControlReference" type="type0020" minOccurs="1" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="type0001">
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="4"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type0002">
+		<xsd:restriction base="numeric"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="type0004">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="35"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type0007">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="4"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type0008">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="14"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type0010">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="35"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type0014">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="14"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type0017">
+		<xsd:restriction base="numeric"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="type0019">
+		<xsd:restriction base="numeric"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="type0020">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="14"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type0022">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="14"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type0025">
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="2"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type0026">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="14"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type0029">
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type0031">
+		<xsd:restriction base="numeric"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="type0032">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="35"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type0035">
+		<xsd:restriction base="numeric"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="type0036">
+		<xsd:restriction base="numeric6"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="type0038">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="6"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type0040">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="35"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type0044">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="35"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type0048">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="14"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type0051">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="2"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type0052">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type0054">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type0057">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="6"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type0058">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="14"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type0060">
+		<xsd:restriction base="numeric6"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="type0062">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="14"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type0065">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="6"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type0068">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="35"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type0070">
+		<xsd:restriction base="numeric2"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="type0073">
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type0074">
+		<xsd:restriction base="numeric6"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="type0081">
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type1000">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="35"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type1001">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type1004">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="35"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type1082">
+		<xsd:restriction base="numeric6"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="type1131">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type1153">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type1154">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="35"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type1156">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="6"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type1218">
+		<xsd:restriction base="numeric2"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="type1220">
+		<xsd:restriction base="numeric2"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="type1222">
+		<xsd:restriction base="numeric2"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="type1225">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type1227">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type1229">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type1230">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="35"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type1366">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="35"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type1373">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type2005">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type2009">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type2151">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type2152">
+		<xsd:restriction base="numeric3"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="type2379">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type2380">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="35"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type2475">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type3035">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type3036">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="35"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type3039">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="35"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type3042">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="35"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type3045">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type3055">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type3124">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="35"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type3127">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="17"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type3128">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="35"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type3139">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type3148">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="512"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type3153">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type3155">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type3164">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="35"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type3192">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="35"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type3194">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="35"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type3207">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type3222">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="70"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type3223">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="25"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type3224">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="70"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type3225">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="25"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type3227">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type3229">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="9"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type3232">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="70"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type3233">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="25"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type3239">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type3251">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="9"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type3285">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="17"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type3301">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="17"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type3412">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="35"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type3413">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="17"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type3432">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="70"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type3433">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="11"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type3434">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="17"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type3436">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="70"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type3446">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="20"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type3453">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type4000">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="35"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type4043">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type4052">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="70"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type4053">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type4055">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type4183">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type4215">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type4221">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type4233">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type4276">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="35"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type4277">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="17"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type4279">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type4294">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="35"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type4295">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type4343">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type4347">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type4400">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="35"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type4401">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type4403">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type4405">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type4431">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type4435">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type4439">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type4440">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="70"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type4441">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type4451">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type4453">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type4461">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type4465">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type4471">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type5004">
+		<xsd:restriction base="numeric18"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="type5025">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type5118">
+		<xsd:restriction base="numeric15"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="type5125">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type5152">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="35"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type5153">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type5189">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type5213">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type5245">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type5249">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type5273">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="12"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type5278">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="17"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type5279">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="7"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type5283">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type5284">
+		<xsd:restriction base="numeric9"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="type5286">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="15"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type5289">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="6"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type5305">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type5375">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type5387">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type5393">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type5394">
+		<xsd:restriction base="numeric12"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="type5402">
+		<xsd:restriction base="numeric12"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="type5419">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type5420">
+		<xsd:restriction base="numeric15"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="type5463">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type5479">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type5482">
+		<xsd:restriction base="numeric10"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="type5495">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type6060">
+		<xsd:restriction base="numeric15"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="type6063">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type6064">
+		<xsd:restriction base="numeric15"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="type6066">
+		<xsd:restriction base="numeric18"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="type6069">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type6152">
+		<xsd:restriction base="numeric18"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="type6154">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="70"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type6155">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type6162">
+		<xsd:restriction base="numeric18"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="type6167">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type6311">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type6313">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type6314">
+		<xsd:restriction base="numeric18"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="type6321">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type6341">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type6343">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type6345">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type6347">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type6348">
+		<xsd:restriction base="numeric4"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="type6411">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type6432">
+		<xsd:restriction base="numeric2"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="type7008">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="35"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type7009">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="17"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type7064">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="35"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type7065">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="17"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type7073">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type7075">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type7077">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type7081">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type7083">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type7102">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="35"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type7130">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="17"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type7140">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="35"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type7143">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type7160">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="35"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type7161">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type7224">
+		<xsd:restriction base="numeric8"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="type7233">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type7293">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type7294">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="35"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type7295">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="17"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type7297">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type7383">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type7402">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="35"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type7405">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type7511">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type8028">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="17"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type8051">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type8053">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type8066">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="17"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type8067">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type8077">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type8101">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type8154">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="35"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type8155">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="10"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type8169">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type8178">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="17"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type8179">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="8"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type8212">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="35"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type8213">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="9"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type8249">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type8260">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="17"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type8275">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type8281">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type8393">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type8395">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type8453">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type8457">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type8459">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="type9213">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="numeric">
+		<xsd:restriction base="xsd:decimal"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="numeric2">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:decimal"/>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:length value="2"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="numeric3">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:decimal"/>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:length value="3"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="numeric4">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:decimal"/>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:length value="4"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="numeric6">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:decimal"/>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:length value="6"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="numeric8">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:decimal"/>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:length value="8"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="numeric9">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:decimal"/>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:length value="9"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="numeric10">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:decimal"/>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:length value="10"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="numeric12">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:decimal"/>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:length value="12"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="numeric15">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:decimal"/>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:length value="15"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="numeric18">
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:decimal"/>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:length value="18"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+</xsd:schema>

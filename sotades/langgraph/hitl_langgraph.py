@@ -16,6 +16,12 @@ from sotades.langgraph.state import State
 
 class HitlLanggraph(ILanggraph):
 
+    def setup_initial_state(self):
+        # TODO
+        self.load_xsd_schemas()
+        self.load_system_message()
+        pass
+
     def __init__(self):
         self.graph: CompiledStateGraph = None
         self.dotenv_loaded = False
@@ -76,6 +82,10 @@ class HitlLanggraph(ILanggraph):
     def display_graph(self):
         display(Image(self.graph.get_graph(xray=True).draw_mermaid_png()))
         return
+
+    def load_xsd_schemas(self):
+        # TODO
+        pass
 
 
 

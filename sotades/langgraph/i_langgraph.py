@@ -35,6 +35,11 @@ class ILanggraph(metaclass=ABCMeta):
         raise NotImplementedError
 
     @abstractmethod
+    def setup_initial_state(self):
+        """Set up the initial state"""
+        raise NotImplementedError
+
+    @abstractmethod
     def display_graph(self):
         """Display the Langgraph graph"""
         raise NotImplementedError
