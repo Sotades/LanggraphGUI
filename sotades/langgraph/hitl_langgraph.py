@@ -79,10 +79,6 @@ class HitlLanggraph(ILanggraph):
             event['messages'][-1].pretty_print()
             print(f"Next state: {self.graph.get_state(thread).next}")
 
-    def display_graph(self):
-        display(Image(self.graph.get_graph(xray=True).draw_mermaid_png()))
-        return
-
     def load_xsd_schemas(self):
         current_dir = os.path.dirname(os.path.abspath(__file__))
         parent_dir = os.path.dirname(current_dir)  # Go up to sotades directory
