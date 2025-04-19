@@ -27,3 +27,14 @@ class TestHitlLanggraph(TestCase):
         image = self.langgraph.display_graph()
         self.assertIsNotNone()
 
+    def test_load_xsd_schemas(self):
+        # Call the method
+        self.langgraph.load_xsd_schemas()
+        
+        # Check that input_xsd was loaded
+        self.assertIsNotNone(self.langgraph.input_xsd)
+        
+        # Check that it contains actual XSD content by looking for common XML schema elements
+        self.assertIn('<?xml', self.langgraph.input_xsd)
+        self.assertIn('xsd:schema', self.langgraph.input_xsd)
+

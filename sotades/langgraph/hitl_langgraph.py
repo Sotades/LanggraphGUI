@@ -84,8 +84,15 @@ class HitlLanggraph(ILanggraph):
         return
 
     def load_xsd_schemas(self):
-        # TODO
-        pass
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        parent_dir = os.path.dirname(current_dir)  # Go up to sotades directory
+        xsd_path = os.path.join(parent_dir, 'xml', 'ZTELINVOIC.INVOIC02.ZTELINVOIC02.xsd')
+        
+        try:
+            with open(xsd_path, 'r', encoding='utf-8') as file:
+                self.input_xsd = file.read()
+        except FileNotFoundError:
+            raise FileNotFoundError(f"XSD schema file not found at {xsd_path}")
 
 
 
